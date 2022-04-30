@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import PaymentVue from './components/Payment.vue';
+import Tweet from './components/Tweet.vue';
 </script>
 
 <template>
-  <PaymentVue />
+  <Tweet />
 </template>
 
 <style>
