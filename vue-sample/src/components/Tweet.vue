@@ -1,7 +1,12 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 const inputText = ref<string>('');
-const tweets = ref([{ id: 0, description: 'sdf' }]);
+const tweets = ref<Sample[]>([]);
+
+interface Sample {
+  id: Number;
+  description: String;
+}
 
 const postTweet = () => {
   if (inputText.value?.length === 0) {
@@ -33,7 +38,7 @@ const deleteTweet = (id: number) => {
       <ul v-else class="tweet-lists">
         <li v-for="(tweet, index) in tweets" :key="index" class="tweet-list">
           <span>{{ tweet.description }}</span>
-          <button @click="deleteTweet(tweet.id)">delete</button>
+          <button @click="deleteTweet(Number(tweet.id))">delete</button>
         </li>
       </ul>
     </div>
