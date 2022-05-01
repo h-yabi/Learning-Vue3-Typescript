@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import PaymentVue from './components/Payment.vue';
+import Reservation from './components/Reservation.vue';
 </script>
 
 <template>
-  <PaymentVue />
+  <Reservation></Reservation>
 </template>
 
 <style>
