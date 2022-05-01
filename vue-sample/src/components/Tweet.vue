@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 const inputText = ref<string>('');
-const tweets = ref<Sample[]>([{} as Sample]);
+const tweets = ref<Sample[]>([]);
 
 interface Sample {
   id: Number;
