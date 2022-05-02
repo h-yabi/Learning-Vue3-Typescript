@@ -4,6 +4,10 @@ import Card from './Card.vue';
 
 <template>
   <div class="container">
+    <teleport to="body">
+      <dialog class="dialog">test</dialog>
+    </teleport>
+
     <Card class="menu-card">
       <span>Badge</span>
       <div class="badges">
@@ -33,6 +37,18 @@ import Card from './Card.vue';
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.dialog {
+  display: block;
+  position: fixed;
+  z-index: 1;
+  top: 50%;
+  right: auto;
+  left: 50%;
+  width: 300px;
+  height: 300px;
+  background-color: #ccc;
+  transform: translate(-50%, -50%);
 }
 .menu-card {
   display: flex;
