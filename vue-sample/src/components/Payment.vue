@@ -1,5 +1,16 @@
 <script setup lang="ts">
-import { ref, reactive, computed, watch, toRefs } from 'vue';
+import { ref, reactive, computed, watch, toRefs, DirectiveBinding } from 'vue';
+
+// v-focus - sample
+const vFocus = {
+  mounted: (el: HTMLElement, binding: DirectiveBinding) => {
+    el.focus();
+    if (binding.modifiers.alert) {
+      el.style.backgroundColor = 'pink';
+    }
+  },
+};
+
 const name = ref<string>('Desk');
 // const price = ref<number>(0);
 const item = reactive({
@@ -36,6 +47,7 @@ watch(price, (newValue, oldValue) => {
 <template>
   <div class="container">
     <h1>最近の支出</h1>
+    <input type="text" v-focus.alert />
     <div class="input-form">
       <div class="input-name"><input type="text" v-model="name" /></div>
       <div class="input-price"><input type="number" v-model="price" /></div>
